@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Samples</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < samples.length; ++i) { %>
+            <tr>
+                <td><%= samples[i].temperature %></td>
+                <td><%= samples[i].humidity %></td>
+                <td><%= samples[i].location %></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>
