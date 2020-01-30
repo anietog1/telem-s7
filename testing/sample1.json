@@ -1,0 +1,8 @@
+{
+    "temperature": 30,
+    "humidity": 0.4,
+    "location": {
+        "type": "Point",
+        "coordinates": [-122.5, 37.7]
+    }
+}
