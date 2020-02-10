@@ -1,5 +1,5 @@
 {
-  "name": "telem-p1-you-say-iot-goes-with-everything",
+  "name": "telem-s7",
   "version": "1.0.0",
   "description": "First project of telematics 2 course. It's a simple application that receives some sensor data and shows it (somehow)",
   "main": "src/app.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anietog1/telem-p1-you-say-iot-goes-with-everything.git"
+    "url": "git+https://github.com/anietog1/telem-s7.git"
   },
   "keywords": [
     "iot",
@@ -20,13 +20,13 @@
   "author": "anietog1",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anietog1/telem-p1-you-say-iot-goes-with-everything/issues"
+    "url": "https://github.com/anietog1/telem-s7/issues"
   },
-  "homepage": "https://github.com/anietog1/telem-p1-you-say-iot-goes-with-everything#readme",
+  "homepage": "https://github.com/anietog1/telem-s7#readme",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "mongoose": "^5.8.9",
+    "mongoose": "^5.8.11",
     "morgan": "^1.9.1"
   },
   "devDependencies": {
