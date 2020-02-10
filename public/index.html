@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Samples</title>
+</head>
+
+<body>
+    <h1>Samples</h1>
+    <div id="samples"></div>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script type="text/babel">
+    var Samples = React.createClass({
+        getInitialState: function() {
+            return ({
+                isLoaded: false,
+                samples: []
+            });
+        },
+        componentDidMount: function() {
+            fetch('/samples').then(function(data) {
+                    return data.json();
+                }).then(json => {
+                    this.setState({
+                        isLoaded: true,
+                        samples: json
+                    });
+                });
+        },
+        render: function() {
+            var {isLoaded, samples} = this.state;
+
+            if(!isLoaded) {
+                return <div>Loading...</div>
+            } else {
+                return (
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Temperature</th>
+                                    <th>Humidity</th>
+                                    <th>Longitude</th>
+                                    <th>Latitude</th>
+                                </tr>    
+                            </thead>
+                            <tbody>
+                            {
+                                samples.map((sample, index) => (
+                                    <tr key={index}>
+                                        <td>{sample.temperature}</td>
+                                        <td>{sample.humidity}</td>
+                                        <td>{sample.location.coordinates[0]}</td>
+                                        <td>{sample.location.coordinates[1]}</td>
+                                    </tr>
+                                ))
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                );
+            }
+        }
+    });
+
+    ReactDOM.render(<Samples />, document.getElementById('samples'));
+    </script>
+</body>
+</html>

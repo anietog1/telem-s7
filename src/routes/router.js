@@ -15,10 +15,4 @@ router.post('/samples/new', async (req, res) => {
     res.sendStatus(200);
 });
 
-// index
-router.get('/', async (req, res) => {
-    const samples = await Sample.find();
-    res.render('index', { samples });
-});
-
 module.exports = router;

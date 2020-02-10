@@ -6,8 +6,9 @@ const mongoose = require('mongoose');
 
 // connecting to db
 mongoose.connect('mongodb://localhost/samples-mongo', {
-     useUnifiedTopology: true, useNewUrlParser: true
-    }).then(db => console.log('DB CONNECTED'))
+        useUnifiedTopology: true,
+        useNewUrlParser: true
+    }).then(db => console.log('Database connected'))
     .catch(err => console.log(err));
 
 // importing routes
@@ -21,6 +22,7 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(express.static('public'));
 
 // routes
 app.use('/', router);
