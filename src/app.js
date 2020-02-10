@@ -5,12 +5,13 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 // connecting to db
-mongoose.connect('mongodb://localhost/samples-mongo', { useUnifiedTopology: true, useNewUrlParser: true})
-    .then(db => console.log('DB CONNECTED'))
+mongoose.connect('mongodb://localhost/samples-mongo', {
+     useUnifiedTopology: true, useNewUrlParser: true
+    }).then(db => console.log('DB CONNECTED'))
     .catch(err => console.log(err));
 
 // importing routes
-const indexRoutes = require('./routes/index');
+const router = require('./routes/router');
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -22,9 +23,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // routes
-app.use('/', indexRoutes);
+app.use('/', router);
 
 // server
 app.listen(app.get('port'), () => {
-    console.log(`SERVER LISTENING ON PORT ${app.get('port')}`);
+    console.log(`Listening on port ${app.get('port')}`);
 });

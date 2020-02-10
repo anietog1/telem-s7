@@ -1,0 +1,28 @@
+POST http://localhost:3000/samples/new HTTP/1.1
+content-type: application/json
+
+{
+    "temperature": 30,
+    "humidity": 0.4,
+    "location": {
+        "type": "Point",
+        "coordinates": [-122.5, 37.7]
+    }
+}
+
+###
+
+POST http://localhost:3000/samples/new HTTP/1.1
+content-type: application/json
+
+{
+    "temperature": 20,
+    "humidity": 0.3,
+    "location": {
+        "type": "Point",
+        "coordinates": [-121.5, 372.7]
+    }
+}
+
+###
+GET http://localhost:3000/samples HTTP/1.1
