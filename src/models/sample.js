@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // based on https://mongoosejs.com/docs/geojson.html
 // longitude goes first, then latitude
-const pointSchema = new mongoose.Schema({
+const pointSchema = new Schema({
     type: {
         type: String,
         enum: ['Point'],

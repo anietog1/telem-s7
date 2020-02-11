@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/anietog1/telem-s7#readme",
   "dependencies": {
-    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "mongoose": "^5.8.11",
     "morgan": "^1.9.1"

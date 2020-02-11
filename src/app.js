@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/samples-mongo', {
     .catch(err => console.log(err));
 
 // importing routes
-const router = require('./routes/router');
+const router = require('./routes/api');
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // routes
-app.use('/', router);
+app.use('/api', router);
 
 // server
 app.listen(app.get('port'), () => {

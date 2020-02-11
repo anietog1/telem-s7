@@ -22,7 +22,7 @@
             });
         },
         componentDidMount: function() {
-            fetch('/samples').then(function(data) {
+            fetch('/api/samples').then(function(data) {
                     return data.json();
                 }).then(json => {
                     this.setState({
@@ -52,8 +52,8 @@
                             {
                                 samples.map((sample, index) => (
                                     <tr key={index}>
-                                        <td>{sample.temperature}</td>
-                                        <td>{sample.humidity}</td>
+                                        <td>{sample.temperature} °C</td>
+                                        <td>{sample.humidity * 100} %</td>
                                         <td>{sample.location.coordinates[0]}</td>
                                         <td>{sample.location.coordinates[1]}</td>
                                     </tr>
