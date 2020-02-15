@@ -25,24 +25,37 @@ GET /samples retorna todos los registros
 
 ## 6. ¿CÓMO REALIZÓ LA AUTENTICACIÓN DE LOS SERVICIOS API REST?
 
-No la he hecho
+Con una API Key que se genera al registrar un usuario y este la puede usar en el url para hacer get y post de los datos
+
+https://localhost:3000/api/samples?apiKey=MY-API-KEY
 
 ## 7. ¿CUALES SON LAS PRINCIPALES DIFICULTADES QUE TUVO AL DESARROLLAR EL PROYECTO?
 
 Me inscribí a la pycon y me quedé sin tiempo alrededor de la deadline
+No conocía nada acerca de la separación de frontend y backend
+Desconocimineto acerca del protocolo de comunicación HTTP
+Desconocimiento de las herramientas con las que se desarrolló la aplicación: React principalmente se me hizo muy difícil de entender y aún ahora que medio entiendo el workflow, no conozco criterios para el diseño de una aplicación robusta en React
 
 ### 7.1 POR DESCONOCIMIENTO DE LA TECNOLOGÍA?
 
 Sabía cómo funcionaban las API Rest pero no cómo se integraba eso con un sistema de frontend como React que lo separa totalmente del backend. Desconocía el funcionamiento de las API Key, JWT y sistemas de autenticación y autorización en general.
 
 ### 7.2 ¿QUÉ CONCEPTOS O FUNDAMENTOS NO SABE PARA PODER DESARROLLAR ESTE PROYECTO?
+
 Cómo funcionan los sistemas de autenticación. También requiero más conocimientos en arquitectura y diseño de aplicaciones web y uso de las tecnologías como react para tomar decisiones más fácilmente al desarrollar
 
 ### 7.3 ¿QUÉ HABILIDADES DE DESARROLLO LE FALTAN PARA PODER TERMINAR EL PROYECTO?
+
 Capacidad de documentarme rápido y generar avances en el desarrollo de una aplicación o proyecto durante intervalos de tiempo cortos. Me pasaba que me sentaba 30min frente a la computadora pero no hacía nada porque necesitaba realmente 3h como para empezar a ser efectivo. En cuanto a telemática me falta conocimiento de las tecnologías que se utilizan y los mecanismos de comunicación, sincronización y cosas como hacer páginas dinámicas
 
+Nota: Después de haberlo terminado lo que siento que requiero es conocimientos de diseño de aplicaciones web usando las herramientas que seleccioné
+
 ### 7.4 ¿QUÉ OTRAS COSAS LE FALTÓ PARA PODER DESARROLLAR EL PROYECTO 1?
+
 No tengo aún el sistema de autenticación que quisiera que sea tipo API Key debido a que la idea es que sea una aplicación IOT y creo que sería lo más apropiado
 
+Nota: Sí acabó siendo con API Key pero hay muchos riesgos de seguridad en el protocolo, por ejemplo el apiKey también se usa en el frontend, es decir, se está usando un mecanismo de autorización como mecanismo de autenticación
+
 ## 8. ¿CUALES FUERON LOS PRINCIPALES APRENDIZAJES DEL PROYECTO 1?
-Fue un descubrimiento brutal la separación que hacen entre frontend y backend; yo conocía solamente los sistemas en los que se embebía código en el html como ejs. También
+
+Fue un descubrimiento brutal la separación que hacen entre frontend y backend; yo conocía solamente los sistemas en los que se embebía código en el html como ejs.
