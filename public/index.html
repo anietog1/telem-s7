@@ -7,7 +7,8 @@
 
 <body>
     <h1>Samples</h1>
-    <div id="samples"></div>
+    <div id="apiKey"></div>
+    <div id="content"></div>
 
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
@@ -22,7 +23,8 @@
             });
         },
         componentDidMount: function() {
-            fetch('/api/samples').then(function(data) {
+            fetch('/api/samples?apiKey=' + document.getElementById('apiKey').textContent)
+                .then(function(data) {
                     return data.json();
                 }).then(json => {
                     this.setState({
@@ -67,7 +69,92 @@
         }
     });
 
-    ReactDOM.render(<Samples />, document.getElementById('samples'));
+    var SignUp = React.createClass({
+        render: function () {
+            return (
+               <form onSubmit={this.signUp}>
+                    <label>Username:</label>
+                    <input type="text" ref="username" required/>
+                    <label>Password:</label>
+                    <input type="password" ref="password" required/>
+                    <input type="submit" value="new"/>
+                </form>
+            );
+        },
+        signUp: function (e) {
+            e.preventDefault();
+
+            var vars = JSON.stringify({
+                username: this.refs.username.value,
+                password: this.refs.password.value
+            });
+
+            fetch('/users/new', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: vars
+            }).then((res) => {
+                if(res.status === 201){
+                    ReactDOM.render(<Login/>, document.getElementById('content'));
+                } else {
+                    alert("User already exists");
+                }
+            }).catch(err => console.log(err));
+        }
+    });
+
+    var Login = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <form onSubmit={this.login}>
+                        <label>Username:</label>
+                        <input type="text" ref="username" required/>
+                        <label>Password:</label>
+                        <input type="password" ref="password" required/>
+                        <input type="submit" value="Login"/>
+                    </form>
+
+                    <form onSubmit={this.signUp}>
+                        <input type="submit" value="Sign up"/>
+                    </form>
+                </div>
+            );
+        },
+        login: function (e) {
+            e.preventDefault();
+
+            var vars = JSON.stringify({
+                username: this.refs.username.value,
+                password: this.refs.password.value
+            });
+
+            fetch('/users/login', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: vars
+            }).then(res => {
+                if(res.status === 200) {
+                    res.text().then(apiKey => {
+                        document.getElementById('apiKey').textContent = apiKey;
+                        ReactDOM.render(<Samples/>, document.getElementById('content'));
+                    }).catch(err => console.log(err));
+                } else {
+                    alert("Wrong username/password");
+                }
+            }).catch(err => console.log(err));
+        },
+        signUp: function (e) {
+            e.preventDefault();
+            ReactDOM.render(<SignUp/>, document.getElementById('content'));
+        }
+    });
+
+    ReactDOM.render(<Login/>, document.getElementById('content'));
     </script>
 </body>
 </html>

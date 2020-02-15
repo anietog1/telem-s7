@@ -29,12 +29,8 @@ content-type: application/json
 GET http://localhost:3000/api/samples HTTP/1.1
 
 ### GET REQUEST WITH API KEY -- MUST SUCCEED
-GET http://localhost:3000/api/samples HTTP/1.1
+GET http://localhost:3000/api/samples?apiKey=VGRJ2QH-W0SMGJ4-NG101ZW-K5R0PPZ HTTP/1.1
 content-type: application/json
-
-{
-    "apiKey": "VGRJ2QH-W0SMGJ4-NG101ZW-K5R0PPZ"
-}
 
 ### POST FOR NEW USER -- MUST FAIL, SINCE ITS ALREADY CREATED
 POST http://localhost:3000/users/new HTTP/1.1
