@@ -6,9 +6,6 @@ class MyMRJob(MRJob):
     def mapper(self, _, line):
         company, price, date = line.split(',')
 
-        # Es posible comparar enteros alfanuméricamente y da el
-        # resultado correcto. Sin embargo, estas líneas permiten
-        # ignorar el encabezado del csv
         try:
             price = float(price)
         except ValueError:
