@@ -10,7 +10,7 @@ class MyMRJob(MRJob):
         # resultado correcto. Sin embargo, estas líneas permiten
         # ignorar el encabezado del csv
         try:
-            price = int(price)
+            price = float(price)
         except ValueError:
             pass
         else:
