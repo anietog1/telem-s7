@@ -1,7 +1,6 @@
 #! /usr/bin/python3
 
 from mrjob.job import MRJob
-from datetime import datetime
 
 class MyMRJob(MRJob):
     def mapper(self, _, line):
