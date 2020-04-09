@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+./"$1" -c mrjob.conf -r emr s3://agustinbigdatas3/datasets/otros/dataempresas.csv
