@@ -1,0 +1,65 @@
+Country,Sex-disaggregated?,Date,Total cases,Cases (% male),Cases (% female),Total deaths,deaths (% male),deaths (% female),Proportion of deaths in confirmed cases (total),Proportion of deaths in confirmed cases (male),Proportion of deaths in confirmed cases (female),Proportion of deaths in confirmed cases (Male:female ratio),Sources
+Australia ,Yes,21-Apr,6619,50%,50%,71,62%,38%,1.1%,1.3%,0.8%,1.60,http://www9.health.gov.au/cda/source/rpt_5.cfm
+Austria,Yes,21-Apr,14828,49%,51%,456,57%,43%,3.1%,3.6%,2.6%,1.38,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
+Belgium,Yes,20-Apr,40795,38%,62%,4283,52%,48%,10.5%,14.3%,8.1%,1.76,https://epistat.wiv-isp.be/Covid/covid-19.html
+Brazil ,Partial,20-Apr,40581,,,2082,60%,40%,,,,,https://portalarquivos.saude.gov.br/images/pdf/2020/April/21/BE13---Boletim-do-COE.pdf
+Canada,Yes,20-Apr,20515,45%,55%,687,51%,49%,3.3%,3.8%,3.0%,1.28,https://www.canada.ca/content/dam/phac-aspc/documents/services/diseases/2019-novel-coronavirus-infection/surv-covid19-epi-update-eng.pdf
+Chile,Partial,19-Apr,10451,57%,40%,139,,,,,,,http://epi.minsal.cl/wp-content/uploads/2020/04/Informe_37_COVID_19_Chile.pdf
+China,Yes,28-Feb,55924,51%,49%,2114,64%,36%,3.8%,4.7%,2.8%,1.68,https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf
+Czech Republic,Partial,21-Apr,6914,46%,51%,196,,,2.8%,,,,https://onemocneni-aktualne.mzcr.cz/covid-19
+Denmark,Yes,21-Apr,7695,43%,57%,370,59%,41%,4.8%,6.5%,3.5%,1.87,https://files.ssi.dk/COVID19-overvaagningsrapport-21032020-hj78
+Ecuador,Yes,20-Apr,10128,59%,41%,507,71%,29%,5.0%,6.1%,3.5%,1.74,https://www.salud.gob.ec/wp-content/uploads/2020/04/Boletin-053-AM_Nacional.pdf
+Finland,Yes,21-Apr,4014,48%,52%,101,58%,42%,2.5%,3.1%,2.0%,1.52,https://experience.arcgis.com/experience/d40b2aaf08be4b9c8ec38de30b714f26
+France**,Partial,21-Apr,179051,,,12798,60%,40%,7.1%,,,,https://dc-covid.site.ined.fr/en/data/
+Germany,Yes,20-Apr,141672,48%,52%,4401,58%,42%,3.1%,3.8%,2.5%,1.51,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Gesamt.html
+Greece,Yes,20-Apr,2174,56%,44%,116,74%,26%,5.3%,7.1%,3.1%,2.25,https://eody.gov.gr/wp-content/uploads/2020/04/covid-gr-daily-report-20200420.pdf
+Indonesia,No,21-Apr,6760,,,590,,,8.7%,,,,https://www.covid19.go.id/2020/04/03/infografis-covid-19-3-april-2020/
+Iran,Yes,17-Mar,14991,57%,43%,853,59%,41%,5.7%,5.9%,5.4%,1.09,https://twitter.com/drjahanpur/status/1239837848175439874
+Israel,Partial,11-Apr,10743,,,96,53%,47%,,,,,https://t.me/MOHreport
+Italy,Yes,16-Apr,158727,50%,50%,19996,65%,35%,12.6%,16.4%,8.7%,1.88,https://www.epicentro.iss.it/coronavirus/bollettino/Bollettino-sorveglianza-integrata-COVID-19_16-aprile-2020.pdf
+Japan,Partial,18-Apr,10432,59%,41%,222,,,,,,,"https://mhlw-gis.maps.arcgis.com/apps/opsdashboard/index.html#/0c5d0502bbb54f9a8dddebca003631b8
+"
+Luxembourg,Partial,21-Apr,3618,51%,49%,78,,,2.2%,,,,https://msan.gouvernement.lu/en/dossiers/2020/corona-virus.html
+Malaysia,Partial,20-Apr,5425,,,87,79%,21%,1.6%,,,,https://www.outbreak.my/stats
+Norway,Yes,20-Apr,7166,49%,51%,163,57%,43%,2.3%,2.6%,1.9%,1.36,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/
+Pakistan,Yes,22-Apr,9749,77%,23%,209,75%,25%,2.1%,2.1%,2.3%,0.91,http://covid.gov.pk/stats/pakistan
+Philippines,Yes,21-Apr,6597,53%,47%,437,68%,32%,6.6%,8.4%,4.6%,1.85,https://ncovtracker.doh.gov.ph/
+Poland,Partial,21-Apr,9856,,,401,53%,46%,,,,,https://docs.google.com/spreadsheets/d/1ierEhD6gcq51HAm433knjnVwey4ZE5DCnu1bW7PRG3E/htmlview?fbclid=IwAR3diFvPqpkq0Kam18jvA9Y2uxq8ihE0DGeynwPJSlwtOeTCcWgGHgK47AM#
+Portugal,Yes,20-Apr,21379,41%,59%,762,50%,50%,3.6%,4.3%,3.0%,1.44,https://covid19.min-saude.pt/wp-content/uploads/2020/04/50_DGS_boletim_20200421.pdf
+Republic of Ireland,Yes,19-Apr,15303,44%,56%,686,55%,45%,4.5%,5.6%,3.6%,1.58,https://www.gov.ie/en/news/7e0924-latest-updates-on-covid-19-coronavirus/
+Romania,Partial,13-Apr,6879,,,333,65%,35%,4.8%,,,,http://www.ms.ro/
+Russia,No,22-Apr,57999,,,513,,,0.9%,,,,https://xn--80aesfpebagmfblc0a.xn--p1ai/
+Saudi Arabia,No,20-Apr,9362,,,97,,,,,,,https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200420-sitrep-91-covid-19.pdf?sfvrsn=fcf0670b_4
+South Korea,Yes,21-Apr,10683,40%,56%,237,53%,47%,2.2%,2.9%,1.8%,1.65,http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun=
+Spain,Yes,20-Apr,145778,46%,54%,12364,60%,40%,8.5%,11.0%,6.3%,1.79,https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/documentos/Actualizacion_68_COVID-19.pdf
+Sweden,Yes,21-Apr,15322,47%,53%,1765,57%,43%,11.5%,13.9%,9.4%,1.48,https://fohm.maps.arcgis.com/apps/opsdashboard/index.html#/68d4537bf2714e63b646c37f152f1392
+Switzerland,Yes,21-Apr,28028,46%,54%,1186,59%,41%,4.2%,5.5%,3.2%,1.72,https://www.bag.admin.ch/bag/fr/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/situation-schweiz-und-international.html#1164290551
+Thailand,Yes,20-Apr,2811,51%,45%,48,81%,19%,1.7%,2.7%,0.7%,3.79,https://ddc.moph.go.th/viralpneumonia/eng/
+The Netherlands,Yes,21-Apr,34089,39%,61%,3916,59%,41%,11.5%,17.2%,7.8%,2.20,https://www.rivm.nl/documenten/epidemiologische-situatie-covid-19-in-nederland-21-april-2020
+Turkey,No,21-Apr,95591,,,2259,,,,,,,"https://covid19.saglik.gov.tr/
+"
+England and Wales*,Partial,10-Apr,,,,10335,61%,39%,,,,,https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales
+USA,Partial,18-Apr,,,,17229,59%,41%,,,,,https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html
+Peru,Yes,20-Apr,16325,62%,38%,445,73%,27%,2.7%,3.2%,2.0%,1.63,https://covid19.minsa.gob.pe/sala_situacional.asp
+Mexico,Yes,21-Apr,9501,58%,42%,857,69%,31%,9.0%,10.8%,6.6%,1.62,https://coronavirus.gob.mx/2020/04/17/conferencia-17-de-abril/
+India,Yes,6-Apr,4065,76%,24%,111,73%,27%,2.7%,2.6%,3.1%,0.85,https://www.firstpost.com/health/73-of-those-who-have-died-of-covid-19-are-men-health-ministry-data-8233921.html
+Northern Ireland,Yes,20-Apr,2724,41%,59%,206,56%,44%,7.6%,10.4%,5.6%,1.84,https://app.powerbi.com/view?r=eyJrIjoiMWFhZDgzZDYtMTE4Yi00MTBjLWIzYmQtMTZhYzc1MGEyMTk1IiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9
+Scotland*,Partial,12-Apr,,,,962,57%,43%,,,,,https://www.nrscotland.gov.uk/files//statistics/covid19/covid-deaths-report-week-14.pdf
+Singapore,Partial,19-Apr,6532,89%,11%,11,,,,,,,https://experience.arcgis.com/experience/7e30edc490a5441a874f9efe67bd8b89
+Qatar,No,21-Apr,6533,,,9,,,,,,,https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx
+Belarus,No,20-Apr,6264,,,51,,,,,,,http://stopcovid.belta.by/
+Dominican Republic,Yes,19-Apr,4964,54%,46%,235,79%,21%,4.7%,6.9%,2.2%,3.22,https://www.msp.gob.do/web/?page_id=6948
+Ukraine,Partial,21-Apr,6125,,,161,52%,48%,,,,,https://moz.gov.ua/article/news/operativna-informacija-pro-poshirennja-koronavirusnoi-infekcii-2019-ncov-
+Panama,Partial,20-Apr,4658,62%,38%,136,,,,,,,http://minsa.gob.pa/coronavirus-covid19
+Argentina,Partial,20-Apr,3031,51%,49%,145,,,,,,,https://www.argentina.gob.ar/coronavirus/informe-diario
+Colombia,Yes,20-Apr,3977,51%,49%,189,64%,36%,4.8%,6.0%,3.5%,1.72,https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx
+Egypt,No,20-Apr,3333,,,250,,,,,,,https://www.facebook.com/113432613540693/posts/156442799239674/?sfnsn=scwspmo&extid=HVu8Ar0L5ZbYZtkj
+UAE,No,21-Apr,7755,,,46,,,,,,,https://covid19.ncema.gov.ae/en
+Serbia,No,21-Apr,6890,,,125,,,,,,,https://covid19.rs/homepage-english/
+South Africa,Yes,19-Apr,3142,45%,55%,43,56%,44%,1.4%,1.7%,1.1%,1.54,https://www.nicd.ac.za/covid-19-update-36/
+Serbia,No,21-Apr,6890,,,125,,,,,,,https://covid19.rs/homepage-english/
+Hungary,No,21-Apr,2098,,,213,,,10.2%,,,,https://koronavirus.gov.hu/cikkek/2098-fore-nott-beazonositott-fertozottek-szama-es-elhunyt-14-idos-kronikus-beteg
+Moldova,Partial,21-Apr,2614,41%,59%,73,,,,,,,http://gismoldova.maps.arcgis.com/apps/opsdashboard/index.html#/d274da857ed345efa66e1fbc959b021b
+Algeria,Partial,21-Apr,2811,58%,42%,392,,,13.9%,,,,http://covid19.sante.gov.dz/carte/
+Bangladesh,Partial,21-Apr,3382,68%,32%,110,,,,,,,https://www.iedcr.gov.bd/index.php/component/content/article/73-ncov-2019
+Morocco,No,21-Apr,3186,,,144,,,4.5%,,,,http://www.covidmaroc.ma/Pages/Accueil.aspx
