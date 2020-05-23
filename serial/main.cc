@@ -3,21 +3,21 @@
 #include <omp.h>
 #include <time.h>
 
-void initialize_buffer(size_t nts, char *dna) {
-  srand(time(NULL));
-  char alphabet[4] = {'A', 'C', 'G', 'T'};
-
-  for(size_t i = 0; i < nts; ++i) {
-    dna[i] = alphabet[rand() % 4];
-  }
-}
-
 void count_nucleotides(size_t nts, const char *dna, unsigned long counts[4]) {
   for(size_t i = 0; i < nts; ++i) {
     if(dna[i] == 'A') ++counts[0];
     if(dna[i] == 'C') ++counts[1];
     if(dna[i] == 'G') ++counts[2];
     if(dna[i] == 'T') ++counts[3];
+  }
+}
+
+void initialize_buffer(size_t nts, char *dna) {
+  srand(time(NULL));
+  char alphabet[4] = {'A', 'C', 'G', 'T'};
+
+  for(size_t i = 0; i < nts; ++i) {
+    dna[i] = alphabet[rand() % 4];
   }
 }
 
@@ -32,5 +32,5 @@ int main(int argc, char** argv) {
   const double t1 = omp_get_wtime();
 
   printf("Time: %f\n", t1 - t0);
-  printf("A: %ul\nC: %ul\nG: %ul\nT: %ul\n", counts[0], counts[1], counts[2], counts[3]);
+  printf("A: %lu\nC: %lu\nG: %lu\nT: %lu\n", counts[0], counts[1], counts[2], counts[3]);
 }
