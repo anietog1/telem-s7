@@ -3,7 +3,7 @@
 #include <omp.h>
 
 
-void initialize_buffer(size_t nts, const char *dna) {
+void initialize_buffer(size_t nts, char *dna) {
   for(size_t i = 0; i < nts; ++i) {
     dna[i] = 'A';
   }
