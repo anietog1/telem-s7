@@ -1,11 +1,13 @@
 #include <cstdlib>
 #include <cstdio>
 #include <omp.h>
-
+#include <time.h>
 
 void initialize_buffer(size_t nts, char *dna) {
+  srand(time(NULL));
+  char alphabet [4] = {'A','C', 'G','T'};
   for(size_t i = 0; i < nts; ++i) {
-    dna[i] = 'A';
+    dna[i] = alphabet[rand() % 4];
   }
 }
 
