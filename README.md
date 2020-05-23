@@ -6,6 +6,8 @@ Yo, Agustín Nieto García, aporté al proyecto de esta y aquella manera.
 
 Yo, Kevin Arley Parra Henao, aporté al proyecto de esta y aquella manera.
 
+Yo, Santiago Castrillón Galvis, aporté al proyecto de esta y aquella manera.
+
 ## Cómo ejecutar
 
 Por ahora no es posible ejecutar.
