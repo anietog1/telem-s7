@@ -4,7 +4,9 @@
 
 
 void initialize_buffer(size_t nts, const char *dna) {
-
+  for(size_t i = 0; i < nts; ++i) {
+    dna[i] = 'A';
+  }
 }
 
 void count_nucleotides(size_t nts, const char *dna, unsigned long counts[4]) {
