@@ -5,7 +5,8 @@
 
 void initialize_buffer(size_t nts, char *dna) {
   srand(time(NULL));
-  char alphabet [4] = {'A','C', 'G','T'};
+  char alphabet[4] = {'A', 'C', 'G', 'T'};
+
   for(size_t i = 0; i < nts; ++i) {
     dna[i] = alphabet[rand() % 4];
   }
