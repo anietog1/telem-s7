@@ -5,27 +5,27 @@
 
 void count_nucleotides(size_t nts, const char *dna, unsigned long total[4])
 {
-  unsigned long counts[4] = {0UL, 0UL, 0UL, 0UL};
-#pragma omp for
+
+  unsigned long countsA = 0UL;
+  unsigned long countsC = 0UL;
+  unsigned long countsG = 0UL;
+  unsigned long countsT = 0UL;
+#pragma omp parallel for reduction(+: countsA, countsC, countsG, countsT)
   for (size_t i = 0; i < nts; ++i)
   {
     if (dna[i] == 'A')
-      ++counts[0];
+      ++countsA;
     if (dna[i] == 'C')
-      ++counts[1];
+      ++countsC;
     if (dna[i] == 'G')
-      ++counts[2];
+      ++countsG;
     if (dna[i] == 'T')
-      ++counts[3];
+      ++countsT;
   }
-
-#pragma omp critical
-  {
-    total[0] += counts[0];
-    total[1] += counts[1];
-    total[2] += counts[2];
-    total[3] += counts[3];
-  }
+  total[0] = countsA;
+  total[1] = countsC;
+  total[2] = countsG;
+  total[3] = countsT;
 }
 
 void initialize_buffer(size_t nts, char *dna)
