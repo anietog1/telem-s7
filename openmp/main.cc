@@ -19,11 +19,11 @@ int main() {
   long double a, b;
   a = 1;
   b = 25;
-  // 1000 000 000 000 000
-  long long n = 1000000000000000;
+  // 1 000 000 000 000
+  long long n = 1000000000000;
   const double t0 = omp_get_wtime();
   double result =  trapezoid(a, b, n);
   const double t1 = omp_get_wtime();
   printf("Time(sec): %f\n", t1 - t0);
-  printf("Integral of exp(%f, %f, %i): %f\n", a, b, n, result);
+  printf("Integral of exp(%Lf, %Lf, %i): %Lf\n", a, b, n, result);
 }

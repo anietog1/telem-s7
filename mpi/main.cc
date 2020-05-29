@@ -4,8 +4,6 @@
 #include <mpi.h>
 using namespace std;
 
-double (*f)(double x) = exp;
-
 const int nTrials = 10;
 const int skipTrials = 3;
 
@@ -14,21 +12,16 @@ double Stats(double & x, double & dx) {
   dx  = sqrt(dx/double(nTrials - skipTrials) - x*x);
 }
 
-double trapezoid(double x0, double xn, int n, const int rank, const int nRanks)
-{
-  const int stepsPerProcess = double(n - 1) / double(nRanks);
-  const int iStart = int(stepsPerProcess * rank);
-  const int iEnd = int(stepsPerProcess * (rank + 1));
+long double (*f)(long double x) = exp;
 
-  double h = (xn - x0) / n;
-  double partial_acum = 0;
-
-#pragma omp parallel for reduction(+: partial_acum)
-  for (int i = iStart; i < iEnd; ++i)
-  {
+long double trapezoid(long double x0, long double xn, long long n) {
+  long double h = (xn - x0) / n;
+  long double partial_acum = 0;
+  #pragma omp parallel for reduction(+: acum)
+  for(long long i = 1; i < n; ++i) {
     partial_acum += f(x0 + h * i);
   }
-  double acum = 0.0;
+  long double acum = 0.0;
   MPI_Allreduce(&acum_partial, &acum, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   return (h / 2) * (f(x0) + 2 * acum + f(xn));
 }
@@ -41,10 +34,11 @@ int main(int argc, char **argv)
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &nRanks);
 
-  double a, b;
+  long double a, b;
   a = 1;
   b = 10;
-  int n = 100000000;
+  // 1 000 000 000 000
+  long long n = 1000000000000;
 
   if (rank == 0)
   {
@@ -62,7 +56,7 @@ int main(int argc, char **argv)
     MPI_Barrier(MPI_COMM_WORLD);
 
     const double t0 = omp_get_wtime();
-    const double I = trapezoid(a, b, n, rank, nRanks);
+    const long double result = trapezoid(a, b, n, rank, nRanks);
     const double t1 = omp_get_wtime();
 
     const double ts = t1 - t0;                 // time in seconds
@@ -92,7 +86,7 @@ int main(int argc, char **argv)
            "Average performance:", "", t, dt, f, df);
     printf("-----------------------------------------------------\n");
     printf("* - warm-up, not included in average\n\n");
-    printf("Integral of exp(%f, %f, %i): %f\n", a, b, n, I);
+    printf("Integral of exp(%Lf, %Lf, %i): %Lf\n", a, b, n, result);
   }
 
   MPI_Finalize();
