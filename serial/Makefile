@@ -8,7 +8,7 @@ app: main.cc
 	${CXX} ${OPTRPT} ${CXXFLAGS} -o "$@" "$<"
 
 queue:	app
-	echo 'cd $$PBS_O_WORKDIR ; ./app' | qsub -N serial
+	echo 'cd $$PBS_O_WORKDIR ; ./app' | qsub -N serial -walltime=00:02:00
 
 clean:
 	rm serial.*
