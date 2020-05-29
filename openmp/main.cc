@@ -2,13 +2,14 @@
 #include <omp.h>
 using namespace std;
 
-long double (*f)(long double x) = exp;
+double (*f)(double x) = exp;
 
-long double trapezoid(long double x0, long double xn, long long n) {
-  long double h = (xn - x0) / n;
-  long double acum = 0;
+double trapezoid(double x0, double xn, unsigned long n) {
+  double h = (xn - x0) / n;
+  double acum = 0;
 
-  for(long long i = 1; i < n; ++i) {
+  #pragma omp parallel for reduction(+: acum)
+  for(unsigned long i = 1; i < n; ++i) {
     acum += f(x0 + h * i);
   }
 
@@ -16,11 +17,10 @@ long double trapezoid(long double x0, long double xn, long long n) {
 }
 
 int main() {
-  long double a, b;
+  double a, b;
   a = 1;
   b = 10;
-  // 1000 000 000 000 000
-  long long n = 1000000000000000;
+  unsigned long n = 1UL << 25 ;
   const double t0 = omp_get_wtime();
   double result =  trapezoid(a, b, n);
   const double t1 = omp_get_wtime();
