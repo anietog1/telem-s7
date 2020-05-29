@@ -19,8 +19,8 @@ int main() {
   long double a, b;
   a = 1;
   b = 25;
-  // 1 000 000 000 000
-  long long n = 1000000000000;
+  // 1 000 000 000
+  long long n = 1000000000;
   const double t0 = omp_get_wtime();
   long double result =  trapezoid(a, b, n);
   const double t1 = omp_get_wtime();

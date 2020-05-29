@@ -1,14 +1,19 @@
-CXX=icpc
-CXXFLAGS=-xMIC-AVX512 -qopenmp
-OPTRPT=-qopt-report=5
+CXX=mpiicpc
+CXXFLAGS=-c -qopenmp -qopt-report=5 -xMIC-AVX512
+LDFLAGS=-qopenmp
 
-default: app
+OBJECTS=main.o
 
-app: main.cc
-	${CXX} ${OPTRPT} ${CXXFLAGS} -o "$@" "$<"
+app: $(OBJECTS)
+	$(CXX) $(LDFLAGS) -o app $(OBJECTS)
 
-queue:	app
-	echo 'cd $$PBS_O_WORKDIR ; ./app' | qsub -N mpi -walltime=00:30:00
+all:	app
+
+run:	all
+	./app
+
+queue:	all
+	echo 'cd $$PBS_O_WORKDIR ; mpirun -machinefile $$PBS_NODEFILE ./app' | qsub -l nodes=4:flat -N process_mpi
 
 clean:
-	rm mpi.*
+	rm process*
