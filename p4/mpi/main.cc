@@ -11,7 +11,9 @@ double_type trapezoid(double_type x0, n_type start, n_type end, double_type h)
   {
     acum += f(x0 + h * i);
   }
-  return acum;
+  double_type total = 0.0;
+  MPI_Allreduce(&acum, &total, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  return total;
 }
 
 int main(int argc, char **argv)
@@ -32,7 +34,6 @@ int main(int argc, char **argv)
   tag = 123; /* set the tag to identify this particular job */
 
   /* Starts MPI processes ... */
-  const double t0 = omp_get_wtime();
   MPI_Init(&argc, &argv);               /* starts MPI */
   MPI_Comm_rank(MPI_COMM_WORLD, &myid); /* get current process id */
   MPI_Comm_size(MPI_COMM_WORLD, &p);    /* get number of processes */
@@ -44,24 +45,15 @@ int main(int argc, char **argv)
   {
     l_num = 1;
   }
+  MPI_Barrier(MPI_COMM_WORLD);
+  const double t0 = omp_get_wtime();
   my_result = trapezoid(a, l_num, u_num, h);
   if (myid == 0)
   {
-    result = my_result;
-    for (i = 1; i < p; i++)
-    {
-      source = i; /* MPI process number range is [0,p-1] */
-      MPI_Recv(&my_result, 1, MPI_DOUBLE, source, tag, MPI_COMM_WORLD, &status);
-      result += my_result;
-    }
-    result = (h / 2) * (f(a) + 2 * result + f(b));
+    result = (h / 2) * (f(a) + 2 * my_result + f(b));
     const double t1 = omp_get_wtime();
     printf("Time(sec): %f\n", t1 - t0);
     print_result(a, b, n, result);
-  }
-  else
-  {
-    MPI_Send(&my_result, 1, MPI_DOUBLE, dest, tag, MPI_COMM_WORLD); // send my_result to intended dest.
   }
 
   MPI_Finalize(); /* let MPI finish up ... */
