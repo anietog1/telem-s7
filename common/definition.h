@@ -3,7 +3,7 @@
 // 1 000 000 000
 #define N 1000000000
 #define LOWER_LIMIT 1
-#define UPPER_LIMIT 2
+#define UPPER_LIMIT 10
 typedef double double_type;
 typedef int n_type;
 
