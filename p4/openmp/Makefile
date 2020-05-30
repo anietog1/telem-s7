@@ -13,4 +13,4 @@ queue:	all
 	echo 'cd $$PBS_O_WORKDIR ; ./app' | qsub -N process_openmp
 
 clean:
-	rm *~ process_openmp.*
+	rm *.o app process_openmp.*

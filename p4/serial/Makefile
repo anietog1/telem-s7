@@ -13,4 +13,4 @@ queue:	all
 	echo 'cd $$PBS_O_WORKDIR ; ./app' | qsub -N process_serial
 
 clean:
-	rm *~ process_serial.*
+	rm *.o app process_serial.*

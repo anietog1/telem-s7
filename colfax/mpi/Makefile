@@ -13,4 +13,4 @@ queue:	all
 	echo 'cd $$PBS_O_WORKDIR ; mpirun -machinefile $$PBS_NODEFILE ./app' | qsub -l nodes=4:flat -N process_mpi
 
 clean:
-	rm *.o app process_mpi.*
+	rm *.o process_mpi.*
