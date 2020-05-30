@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
 #include <omp.h>
 using namespace std;
+typedef double double_type;
 
-long double (*f)(long double x) = exp;
+double_type (*f)(double_type x) = exp;
 
-long double trapezoid(long double x0, long double xn, long long n) {
-  long double h = (xn - x0) / n;
-  long double acum = 0;
+double_type trapezoid(double_type x0, double_type xn, long long n) {
+  double_type h = (xn - x0) / n;
+  double_type acum = 0;
 
   for(long long i = 1; i < n; ++i) {
     acum += f(x0 + h * i);
@@ -16,13 +17,13 @@ long double trapezoid(long double x0, long double xn, long long n) {
 }
 
 int main() {
-  long double a, b;
+  double_type a, b;
   a = 1;
   b = 25;
   // 1 000 000 000
   long long n = 1000000000;
   const double t0 = omp_get_wtime();
-  long double result =  trapezoid(a, b, n);
+  double_type result =  trapezoid(a, b, n);
   const double t1 = omp_get_wtime();
   printf("Time(sec): %f\n", t1 - t0);
   printf("Integral of exp(%Lf, %Lf, %i): %Lf\n", a, b, n, result);
