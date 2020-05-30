@@ -1,5 +1,12 @@
 #include "definition.h"
+
+#pragma omp declare simd
 double f(const double x)
+{
+    return exp(x);
+}
+
+double fs(const double x)
 {
     return exp(x);
 }

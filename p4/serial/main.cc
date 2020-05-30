@@ -5,7 +5,7 @@ double_type trapezoid(double_type x0, double_type xn, n_type n) {
   double_type acum = 0;
 
   for(n_type i = 1; i < n; ++i) {
-    acum += f(x0 + h * i);
+    acum += fs(x0 + h * i);
   }
 
   return (h / 2) * (f(x0) + 2 * acum + f(xn));

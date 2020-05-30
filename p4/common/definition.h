@@ -12,4 +12,6 @@ using namespace std;
 #pragma omp declare simd
 double f(const double x);
 
+double fs(const double x);
+
 void print_result(double_type a, double_type b, n_type n, double_type result);
