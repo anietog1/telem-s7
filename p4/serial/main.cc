@@ -8,7 +8,7 @@ double_type trapezoid(double_type x0, double_type xn, n_type n) {
     acum += fs(x0 + h * i);
   }
 
-  return (h / 2) * (f(x0) + 2 * acum + f(xn));
+  return (h / 2) * (fs(x0) + 2 * acum + fs(xn));
 }
 
 int main() {
