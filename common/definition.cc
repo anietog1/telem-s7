@@ -1,5 +1,5 @@
 #include "definition.h"
-double_type f(const double_type x)
+double f(const double x)
 {
     return exp(x);
 }
