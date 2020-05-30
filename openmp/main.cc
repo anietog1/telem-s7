@@ -17,8 +17,8 @@ double_type trapezoid(double_type x0, double_type xn, n_type n)
 int main()
 {
   double_type a, b;
-  a = 1;
-  b = 10;
+  a = LOWER_LIMIT;
+  b = UPPER_LIMIT;
   n_type n = N;
   const double t0 = omp_get_wtime();
   double_type result = trapezoid(a, b, n);

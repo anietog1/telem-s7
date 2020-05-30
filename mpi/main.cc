@@ -1,18 +1,14 @@
-#include <bits/stdc++.h>
+#include "../common/definition.h"
 #include <cmath>
-#include <omp.h>
 #include <mpi.h>
-using namespace std;
 
-long double (*f)(long double x) = exp;
-
-long double trapezoid(double x0, double xn, long long n)
+double_type trapezoid(double x0, double xn, n_type n)
 {
-  long double h = (xn - x0) / n;
-  long double acum = 0.0;
+  double_type h = (xn - x0) / n;
+  double_type acum = 0.0;
 #pragma omp parallel for reduction(+ \
                                    : acum)
-  for (long long i = 0; i < n; ++i)
+  for (n_type i = 0; i < n; ++i)
   {
     acum += f(x0 + h * i);
   }
@@ -21,17 +17,17 @@ long double trapezoid(double x0, double xn, long long n)
 
 int main(int argc, char **argv)
 {
-  int n, p, i, j, ierr, num;
-  float result, a, b;
-  float my_a, my_b, my_range;
+  double_type a = LOWER_LIMIT; /* lower limit of integration */
+  double_type b = UPPER_LIMIT; /* upper limit of integration */
+  n_type n = N;                /* number of steps */
+
+  int p, i;
+  n_type num;
+  double_type my_a, my_b, my_range;
 
   int myid, source, dest, tag;
   MPI_Status status;
-  float my_result;
-
-  a = 0.;      /* lower limit of integration */
-  b = 10;      /* upper limit of integration */
-  n = 1000000; /* number of increment within each process */
+  double_type my_result;
 
   dest = 0;  /* define the process that computes the final result */
   tag = 123; /* set the tag to identify this particular job */
@@ -42,7 +38,7 @@ int main(int argc, char **argv)
   MPI_Comm_rank(MPI_COMM_WORLD, &myid); /* get current process id */
   MPI_Comm_size(MPI_COMM_WORLD, &p);    /* get number of processes */
 
-  num = n / p; /* number of intervals calculated by each process*/
+  num = n / p; /* steps calculated by each process*/
   my_range = (b - a) / p;
   my_a = a + myid * my_range;
   my_b = my_a + my_range;

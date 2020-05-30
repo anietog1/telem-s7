@@ -2,7 +2,7 @@ CXX=mpiicpc
 CXXFLAGS=-c -qopenmp -qopt-report=5 -xMIC-AVX512
 LDFLAGS=-qopenmp
 
-OBJECTS=main.o
+OBJECTS=main.o definition.o
 
 app: $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o app $(OBJECTS)
@@ -16,4 +16,4 @@ queue:	all
 	echo 'cd $$PBS_O_WORKDIR ; mpirun -machinefile $$PBS_NODEFILE ./app' | qsub -l nodes=4:flat -N process_mpi
 
 clean:
-	rm process*
+	rm -f *.optrpt *.o app *~ process_mpi.*

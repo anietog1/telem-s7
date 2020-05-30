@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 #include <omp.h>
-// 1 000 000 000
-#define N 1000000000
+// 1 000 000 000 000
+#define N 1000000000000
+#define LOWER_LIMIT 1
+#define UPPER_LIMIT 10
 typedef double double_type;
-typedef int n_type;
+typedef long long n_type;
 
 using namespace std;
 
