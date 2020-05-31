@@ -6,7 +6,7 @@ Yo, Agustín Nieto García, mejoré el desempeño de la aplicación garantizando
 
 Yo, Kevin Arley Parra Henao, aporté al proyecto implementando un método para la generación aleatoria de nucleobases para los nucleótidos, esto en la fase de prueba. El método genera aleatoriamente (en realidad, pseudo aleatoriamente) una de las siguientes moléculas: adenina (A), citosina (C), guanina (G) y timina (T). Estas se van uniendo a un polímero de DNA (Ácido desoxirribonucleico), el cual se usa como método input para testear los diferentes algoritmos que se tienen. Es importante recalcar que este método es pseudoaleatorio, genera una secuencia no uniformemente distribuida y tampoco constituye una hebra de DNA precisamente, se usa sólo para fines de pruebas y académicos.
 
-Yo, Santiago Castrillón Galvis, aporté al proyecto de esta y aquella manera.
+Yo, Santiago Castrillón Galvis, aporté al proyecto analizando los programas de OpenMP y MPI de manera que fueran eficientes y acordes al desempeño esperado en computación de alto rendimiento, realizando mediciones, SpeedUp y Eficiencia en cada una de las etapas hasta conseguir resultados adecuados.
 
 ## Cómo ejecutar
 
@@ -19,4 +19,7 @@ En la carpeta de cualquiera de los métodos, ejecutar:
 
 ## Análisis de Resultados
 
-Por ahora no tenemos análisis de resultados.
+Primeramente se tomaron los tiempos de procesamiento en el algoritmo serial, el resultado fue Time(sec): 115.530155, asi que ya tenemos el tiempo de computo serial: TcomputoSerial = 115.530155 s.
+
+
+
