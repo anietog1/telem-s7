@@ -1,18 +1,18 @@
 
 ########################################################################
 # Colfax Cluster - https://colfaxresearch.com/
-#      Date:           Sat May 30 12:34:35 PDT 2020
-#    Job ID:           115769.c008
-#      User:           u42832
-# Resources:           neednodes=1:xeonphi,nodes=1:xeonphi,walltime=00:02:00
+#      Date:           Sat May 30 19:10:39 PDT 2020
+#    Job ID:           115906.c008
+#      User:           u42513
+# Resources:           neednodes=4:flat,nodes=4:flat,walltime=00:02:00
 ########################################################################
 
-Time(sec): 1.582817
-Integral of exp(0.000000, 10.000000, 4000000000l): 22025.465795
+Time(sec): 0.233222
+Integral of exp(0.000000, 10.000000, 4000000000): 22025.465795
 
 ########################################################################
 # Colfax Cluster
-# End of output for job 115769.c008
-# Date: Sat May 30 12:34:37 PDT 2020
+# End of output for job 115906.c008
+# Date: Sat May 30 19:10:42 PDT 2020
 ########################################################################
 
