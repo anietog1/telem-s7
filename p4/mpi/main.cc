@@ -2,28 +2,27 @@
 #include <cmath>
 #include <mpi.h>
 
-double_type trapezoid(double_type x0, n_type start, n_type end, double_type h)
-{
-  double_type acum = 0.0;
-#pragma omp parallel for reduction(+ \
-                                   : acum)
-  for (n_type i = start; i < end; ++i)
-  {
+double trapezoid(double x0, long long start, long long end, double h) {
+  double acum = 0;
+
+#pragma omp parallel for simd simdlen(8) reduction(+: acum)
+  for(long long i = start; i < end; ++i) {
     acum += f(x0 + h * i);
   }
-  double_type total = 0.0;
+
+  double total = 0;
   MPI_Allreduce(&acum, &total, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   return total;
 }
 
-int main(int argc, char **argv)
-{
-  double_type my_result, result, h;
-  double_type a = LOWER_LIMIT; /* lower limit of integration */
-  double_type b = UPPER_LIMIT; /* upper limit of integration */
+int main(int argc, char **argv) {
+  double my_result, result, h;
 
-  n_type n = N; /* number of steps */
-  n_type u_num, l_num;
+  double a = LOWER_LIMIT; /* lower limit of integration */
+  double b = UPPER_LIMIT; /* upper limit of integration */
+
+  long long n = N; /* number of steps */
+  long long u_num, l_num;
 
   int p, i;
   int myid, source, dest, tag;
@@ -41,15 +40,16 @@ int main(int argc, char **argv)
   l_num = (n / p) * myid;
   u_num = (n / p) * myid + (n / p);
   h = (b - a) / n;
-  if (l_num == 0)
-  {
+
+  if(l_num == 0) {
     l_num = 1;
   }
+
   MPI_Barrier(MPI_COMM_WORLD);
+
   const double t0 = omp_get_wtime();
   my_result = trapezoid(a, l_num, u_num, h);
-  if (myid == 0)
-  {
+  if(myid == 0) {
     result = (h / 2) * (f(a) + 2 * my_result + f(b));
     const double t1 = omp_get_wtime();
     printf("Time(sec): %f\n", t1 - t0);

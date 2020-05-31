@@ -1,10 +1,10 @@
 #include "../common/definition.h"
 
-double_type trapezoid(double_type x0, double_type xn, n_type n) {
-  double_type h = (xn - x0) / n;
-  double_type acum = 0;
+double trapezoid(double x0, double xn, long long n) {
+  double h = (xn - x0) / n;
+  double acum = 0;
 
-  for(n_type i = 1; i < n; ++i) {
+  for(long long i = 1; i < n; ++i) {
     acum += fs(x0 + h * i);
   }
 
@@ -12,13 +12,13 @@ double_type trapezoid(double_type x0, double_type xn, n_type n) {
 }
 
 int main() {
-  double_type a, b;
+  double a, b;
   a = LOWER_LIMIT;
   b = UPPER_LIMIT;
-  n_type n = N;
+  long long n = N;
   const double t0 = omp_get_wtime();
-  double_type result =  trapezoid(a, b, n);
+  double result =  trapezoid(a, b, n);
   const double t1 = omp_get_wtime();
   printf("Time(sec): %f\n", t1 - t0);
-  print_result(a,b, n, result);
+  print_result(a, b, n, result);
 }

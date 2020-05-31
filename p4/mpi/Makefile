@@ -4,12 +4,12 @@ LDFLAGS=-qopenmp
 
 OBJECTS=main.o ../common/definition.o
 
+all: app
+
 app: $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o app $(OBJECTS)
 
-all:	app
-
-queue:	all
+queue: all
 	echo 'cd $$PBS_O_WORKDIR ; mpirun -machinefile $$PBS_NODEFILE ./app' | qsub -l nodes=4:flat -N process_mpi
 
 clean:

@@ -4,13 +4,13 @@ LDFLAGS=-qopenmp
 
 OBJECTS=main.o ../common/definition.o
 
+all: app
+
 app: $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o app $(OBJECTS)
 
-all:	app
-
-queue:	all
+queue: all
 	echo 'cd $$PBS_O_WORKDIR ; ./app' | qsub -N process_openmp
 
 clean:
-	rm *.o app process_openmp.*
+	rm *.o app process_serial.*
