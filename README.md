@@ -10,8 +10,13 @@ Yo, Santiago Castrillón Galvis, aporté al proyecto de esta y aquella manera.
 
 ## Cómo ejecutar
 
-Por ahora no es posible ejecutar.
+Se requiere estar dentro del cluster de colfax o un cluster equivalente, con máquinas con procesadores Xeon Phi.
+
+En la carpeta de cualquiera de los métodos, ejecutar:
+
+    $ make       # para compilar el programa y generar el reporte de compilador
+    $ make queue # para correr el programa en el cluster
 
 ## Análisis de Resultados
 
-Por ahora no tenemos resultados.
+Por ahora no tenemos análisis de resultados.
