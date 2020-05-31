@@ -12,5 +12,8 @@ app: $(OBJECTS)
 queue: all
 	echo 'cd $$PBS_O_WORKDIR ; mpirun -machinefile $$PBS_NODEFILE ./app' | qsub -l nodes=4:flat -N process_mpi
 
+queueN:	all
+	echo 'cd $$PBS_O_WORKDIR ; mpirun -machinefile $$PBS_NODEFILE ./app' | qsub -l nodes=$(N):flat -N process_mpi_N_$(N)
+
 clean:
 	rm *.o app process_mpi.*
