@@ -20,6 +20,8 @@ En la carpeta de cualquiera de los métodos, ejecutar:
 ## Análisis de Resultados
 
 Primeramente se tomaron los tiempos de procesamiento en el algoritmo serial:
-TcomputoSerial = 115.530155 s.
+
+# TcomputoSerial = 115.530155 s.
+
 Este es el algoritmo base sin ningun tipo de paralelización, como se ve, el tiempo de computo es elevado dado la gran cantidad de operaciones que tiene que realizar en el calculo de cada trapecio y en la sumatoria de cada uno de ellos, y al ser operaciones secuenciales todo el proceso se torna aun más extenso.
 
