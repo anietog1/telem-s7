@@ -4,7 +4,7 @@ En este trabajo resolvemos integrales haciendo uso del [método numérico del tr
 
 Yo, Agustín Nieto García, mejoré el desempeño de la aplicación garantizando el máximo aprovechamiento de la vectorización en la máquina, con SIMD en OpenMP, lo cual también mejoró los tiempos de cómputo en MPI.
 
-Yo, Kevin Arley Parra Henao, aporté al proyecto así y asá.
+Yo, Kevin Arley Parra Henao, diseñé e implementé los algoritmos para la ejecución serial, OpenMP y MPI. En estos algoritmos se tiene la implementación básica del método del trapecio compuesto utilizado para calcular la integral definida de una función en un intervalo dado, con un número de pasos especificados. Este método fue enriquecido con las características que ofrece OpenMP para el manejo de hilos de ejecución y con el procesamiento distribuido en cluster de MPI.
 
 Yo, Santiago Castrillón Galvis, aporté al proyecto analizando los programas de OpenMP y MPI de manera que fueran eficientes y acordes al desempeño esperado en computación de alto rendimiento, realizando mediciones, SpeedUp y Eficiencia en cada una de las etapas hasta conseguir resultados adecuados.
 
