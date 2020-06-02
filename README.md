@@ -8,6 +8,37 @@ Yo, Kevin Arley Parra Henao, diseñé e implementé los algoritmos para la ejecu
 
 Yo, Santiago Castrillón Galvis, aporté al proyecto analizando los programas de OpenMP y MPI de manera que fueran eficientes y acordes al desempeño esperado en computación de alto rendimiento, realizando mediciones, SpeedUp y Eficiencia en cada una de las etapas hasta conseguir resultados adecuados.
 
+# Estructura del repositorio
+
+.
+├── LICENSE
+├── PCAM.md
+├── README.md
+├── reports
+│   ├── process_mpi_N_2.o115907
+│   ├── process_mpi_N_3.o115908
+│   ├── process_mpi.o115906
+│   ├── process_openmp.o115905
+│   └── process_serial.o115770
+└── src
+    ├── common
+    │   ├── definition.cc
+    │   └── definition.h
+    ├── mpi
+    │   ├── main.cc
+    │   └── Makefile
+    ├── openmp
+    │   ├── main.cc
+    │   └── Makefile
+    └── serial
+        ├── main.cc
+        └── Makefile
+**src** Tiene los códigos para la implementación serial, openmp, y mpi (cada uno en una carpeta llamada respectivamente). Cada carpeta contiene el código y el Makefile para la compilación y ejecución. La subcarpeta **common** contiene las definiciones comunes como el número de pasos y el intervalo a usar para todos los programas.
+
+**reports** Tiene las salidas de la ejecución de los programas, donde cada archivo process_* indica la salida de su respectivo programa. En este caso, por ejemplo process_serial.o*, contiene la salida del procesamiento del programa serial.A su vez, process_mpi_N_2.o*, por ejemplo, contiene la salida del procesamiento en MPI con 2 nodos. Por otro lado, process_mpi.o* es la salida con 4 nodos (número máximo de nodos permitidos) y es la que se implementó por defecto. Por último, el archivo final_report.pdf contiene un informe que incluye información  más detallada del proceso de desarrollo del proyecto.
+
+**PCAM.md** Tiene detalles generales de la implementación en PCAM. Información más detallada, que incluye diagramas, en el archivo reports/final_report.pdf
+
 # Cómo ejecutar
 
 Se requiere estar dentro del cluster de colfax o un cluster equivalente, con máquinas con procesadores Xeon Phi.
