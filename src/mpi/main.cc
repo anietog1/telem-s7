@@ -26,12 +26,9 @@ int main(int argc, char **argv) {
   long n = N; /* number of steps */
   long u_num, l_num;
 
-  int p, i;
-  int myid, dest;
-
-  MPI_Status status;
-
-  dest = MY_ROOT;  /* define the process that computes the final result */
+  int p;
+  int myid;
+  int dest = MY_ROOT;  /* define the process that computes the final result */
 
   /* Starts MPI processes ... */
   MPI_Init(&argc, &argv);               /* starts MPI */
