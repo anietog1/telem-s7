@@ -4,7 +4,7 @@
 #include <omp.h>
 
 // 4 000 000 000
-#define N 4000000000LL
+#define N 4000000000L
 
 #define LOWER_LIMIT 0
 #define UPPER_LIMIT 10

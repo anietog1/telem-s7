@@ -2,11 +2,11 @@
 #include <cmath>
 #include <mpi.h>
 
-double trapezoid(double x0, long long start, long long end, double h) {
+double trapezoid(double x0, long start, long end, double h) {
   double acum = 0;
 
 #pragma omp parallel for simd simdlen(8) reduction(+: acum)
-  for(long long i = start; i < end; ++i) {
+  for(long i = start; i < end; ++i) {
     acum += f(x0 + h * i);
   }
 
@@ -21,8 +21,8 @@ int main(int argc, char **argv) {
   double a = LOWER_LIMIT; /* lower limit of integration */
   double b = UPPER_LIMIT; /* upper limit of integration */
 
-  long long n = N; /* number of steps */
-  long long u_num, l_num;
+  long n = N; /* number of steps */
+  long u_num, l_num;
 
   int p, i;
   int myid, source, dest, tag;
