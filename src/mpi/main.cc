@@ -2,6 +2,8 @@
 #include <cmath>
 #include <mpi.h>
 
+#define MY_ROOT 0
+
 double trapezoid(double x0, long start, long end, double h) {
   double acum = 0;
 
@@ -11,7 +13,7 @@ double trapezoid(double x0, long start, long end, double h) {
   }
 
   double total = 0;
-  MPI_Allreduce(&acum, &total, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+  MPI_Reduce(&acum, &total, 1, MPI_DOUBLE, MPI_SUM, MY_ROOT, MPI_COMM_WORLD);
   return total;
 }
 
@@ -25,12 +27,11 @@ int main(int argc, char **argv) {
   long u_num, l_num;
 
   int p, i;
-  int myid, source, dest, tag;
+  int myid, dest;
 
   MPI_Status status;
 
-  dest = 0;  /* define the process that computes the final result */
-  tag = 123; /* set the tag to identify this particular job */
+  dest = MY_ROOT;  /* define the process that computes the final result */
 
   /* Starts MPI processes ... */
   MPI_Init(&argc, &argv);               /* starts MPI */
@@ -49,7 +50,8 @@ int main(int argc, char **argv) {
 
   const double t0 = omp_get_wtime();
   my_result = trapezoid(a, l_num, u_num, h);
-  if(myid == 0) {
+
+  if(myid == dest) {
     result = (h / 2) * (f(a) + 2 * my_result + f(b));
     const double t1 = omp_get_wtime();
     printf("Time(sec): %f\n", t1 - t0);
