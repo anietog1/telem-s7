@@ -57,3 +57,50 @@ Primeramente se tomaron los tiempos de procesamiento en el algoritmo serial:
 
 Este es el tiempo obtenido del algoritmo base sin ningun tipo de paralelización, como se ve, el tiempo de computo es elevado dado la gran cantidad de operaciones que tiene que realizar en el cálculo de cada trapecio y en la sumatoria de cada uno de ellos, y al ser operaciones secuenciales todo el proceso se torna aún más extenso.
 
+## OpenMP
+
+Tp = 0.58 s
+
+Speed Up (S(P)) = Ts / (Tp / P)
+
+S(1) = 115.53 / (0.58 / 1) = 199.19
+
+Eficiencia (E(P)) = S(P) / P 
+
+E(1) = 199.19 / 1 = 199.19
+
+## MPI N = 2
+
+Tm2 = 0.35 s
+
+Speed Up (S(P)) = Ts / (Tm2 / P)
+
+S(2) = 115.53 / (0.354924 / 2) = 660.17
+
+Eficiencia (E(P)) = S(P) / P 
+
+E(2) =660.17 / 2 = 330.09
+
+## MPI N = 3
+
+Tm3 = 0.346949 s
+
+Speed Up (S(P)) = Ts / (Tm3 / P)
+
+S(3) = 115.53 / (0.346949 / 3) = 990.26
+
+Eficiencia (E(P)) = S(P) / P 
+
+E(3) = 990.26 / 3 = 330.09
+
+## MPI N = 4
+
+Tm = 0.54
+
+Speed Up (S(P)) = Ts / (Tm / P)
+
+S(4) = 115.53 / (0.54 / 4) =  856.52
+
+Eficiencia (E(P)) = S(P) / P 
+
+E(4) = 856.52 / 4 = 214.13
