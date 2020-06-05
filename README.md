@@ -8,10 +8,6 @@ Yo, Kevin Arley Parra Henao, diseñé e implementé los algoritmos para la ejecu
 
 Yo, Santiago Castrillón Galvis, aporté al proyecto analizando los programas de OpenMP y MPI de manera que fueran eficientes y acordes al desempeño esperado en computación de alto rendimiento, realizando mediciones, speedup y eficiencia en cada una de las etapas hasta conseguir resultados adecuados; colaboré en el análisis de los resultados y con el diseño de la vectorización en OpenMP.
 
-# Videos
-
-Kevin Arley Parra Henao: https://web.microsoftstream.com/video/d51f8066-a972-4bb1-9100-9a3a95fcb748
-
 # Estructura del repositorio
 <pre>
 .
@@ -63,6 +59,8 @@ Este es el tiempo obtenido del algoritmo base sin ningun tipo de paralelización
 
 ## OpenMP
 
+El tiempo de procesamiento de OpenMP es el más grande dentro de los tiempos que tomamos en algoritmos paralelizados ya que unicamente usa 1 nodo, en este caso la paralelización fue mediante multiples subprocesos o hilos que tienen memoria compartida por lo que la comunicación y trasnferencia de datos entre ellos es mucho más rapida, por ello evidenciamos una notable mejora con respecto al algoritmo serial base.
+
 Tp = 0.58 s
 
 Speed Up (S(P)) = Ts / (Tp / P)
@@ -74,6 +72,10 @@ Eficiencia (E(P)) = S(P) / P
 E(1) = 199.19 / 1 = 199.19
 
 ## MPI N = 2
+
+En el caso de MPI los resultados en general son mucho más positivos dado que se pueden usar multiples nodos para llevar la ejecución del programa, haciendo uso de muchos procesoscon memoria distribuida procesando paralelamente. 
+
+Haciendo uso de 2 nodos, se puede evidenciar una reducción de tiempo de procesamiento, y un gran incremento en el speedUp, La eficiencia tambien es mayor pero esta sometida a la cantidad de nodos usados.
 
 Tm2 = 0.354924 s
 
@@ -87,6 +89,8 @@ E(2) =660.17 / 2 = 330.09
 
 ## MPI N = 3
 
+En el caso de hacer uso de 3 nodos, la diferencia con respecto al tiempo de procesamiento es muy pequeña ya que de por si se estan logrando tiempos muy bajos y se hace mas dificil mejorar la velocidad de computo, sin embargo vemos que el speedUp tiene un notable crecimiento, pero su eficiencia no es mucho mayor ya que a mayor cantidad de nodos usados la eficiencia se ve limitada.
+
 Tm3 = 0.346949 s
 
 Speed Up (S(P)) = Ts / (Tm3 / P)
@@ -98,6 +102,8 @@ Eficiencia (E(P)) = S(P) / P
 E(3) = 990.26 / 3 = 330.09
 
 ## MPI N = 4
+
+En la ejecución del programa usando 4 nodos se obtuvo la mejor marca de tiempo, el alto procesamiento de los 4 nodos justifica su uso y reduce mucho el tiempo, los resultados son muy positivos obteniendo un speedUp muy alto y una eficiencia superior a las demás.
 
 Tm = 0.233222 s
 
