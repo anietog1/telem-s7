@@ -8,6 +8,10 @@ Yo, Kevin Arley Parra Henao, diseñé e implementé los algoritmos para la ejecu
 
 Yo, Santiago Castrillón Galvis, aporté al proyecto analizando los programas de OpenMP y MPI de manera que fueran eficientes y acordes al desempeño esperado en computación de alto rendimiento, realizando mediciones, speedup y eficiencia en cada una de las etapas hasta conseguir resultados adecuados; colaboré en el análisis de los resultados y con el diseño de la vectorización en OpenMP.
 
+# Videos
+
+Kevin Arley Parra Henao: https://web.microsoftstream.com/video/d51f8066-a972-4bb1-9100-9a3a95fcb748
+
 # Estructura del repositorio
 <pre>
 .
